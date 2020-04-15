@@ -1,21 +1,23 @@
 export const initialState = {
   joke: {
-    category: "",
-    type: '',
-    setup: '',
-    delivery: '',
-    flags: {
-      nsfw: false,
-      religious: false,
-      political: false,
-      racist: false,
-      sexist: false
-    },
-    id: 1,
-    error: false
+    data: {
+      category: "",   // this is unnecessary, can be empty
+      type: '',
+      setup: '',
+      delivery: '',
+      flags: {
+        nsfw: false,
+        religious: false,
+        political: false,
+        racist: false,
+        sexist: false
+      },
+      id: 1,
+      error: false
+    }
   },
   isFetching: false,
-  error:''
+  error: ''
 }
 
 const url = 'https://sv443.net/jokeapi/v2/joke/Programming?type=twopart?format=json?blacklistFlags=racist,sexist,nsfw'
@@ -30,19 +32,19 @@ export const jokeReducer = (state = initialState, action) =>
         ...state,
         isFetching: true
       }
-      case 'FETCH_JOKE_SUCCESS':
-        return {
-          ...state,
-          isFetching: false,
-          joke:action.payload,
-          error:''
-        }
-        case 'FETCH_JOKE_FAIL':
-          return {
-            ...state,
-            isFetching: false,
-            error:action.payload
-          }
+    case 'FETCH_JOKE_SUCCESS':
+      return {
+        ...state,
+        isFetching: false,
+        joke: action.payload,
+        error: ''
+      }
+    case 'FETCH_JOKE_FAIL':
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload
+      }
     default:
       return state
   }

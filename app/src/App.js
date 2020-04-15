@@ -12,7 +12,7 @@ function App()
   return (
     <div className="App">
       <h1>Hello Joker</h1>
-      <Request></Request>
+      {/* <Request></Request> */}
       <Joke></Joke>
     </div>
   );

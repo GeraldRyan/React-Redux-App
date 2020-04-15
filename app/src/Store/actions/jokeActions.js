@@ -10,8 +10,6 @@ export const fetchJoke = () =>
       .get(url)
       .then(res =>
       {
-        // res.data.??
-        console.log(res)
         dispatch({ type: 'FETCH_JOKE_SUCCESS', payload: res })
       })
       .catch(err =>
