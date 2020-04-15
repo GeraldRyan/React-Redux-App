@@ -5,10 +5,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {createStore} from 'redux'
 import {Provider } from 'react-redux'
-import {appReducer} from './Reducers/appReducer'
+import {jokeReducer} from './Store/reducers/jokeReducer'
 
 
-const store = createStore(appReducer)
+const store = createStore(jokeReducer)
 
 ReactDOM.render(
   <Provider store={store}>
