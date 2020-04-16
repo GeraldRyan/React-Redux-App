@@ -16,7 +16,7 @@ export const initialState = {
       error: false
     }
   },
-  showAnswer:false,
+  displayDelivery:false,
   isFetching: false,
   error: ''
 }
@@ -46,6 +46,11 @@ export const jokeReducer = (state = initialState, action) =>
         isFetching: false,
         error: action.payload
       }
+      case 'DISPLAY_DELIVERY':
+        return{
+          ...state,
+          displayDelivery:true
+        }
     default:
       return state
   }

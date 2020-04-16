@@ -4,10 +4,14 @@ import { connect } from 'react-redux'
 const Request = (props) =>
 {
 
+  let toShow =''
 
   const handleClick = e => {
     e.preventDefault()
-    console.log("show answer", props.state.showAnswer)
+    console.log("show answer", props.state.displayDelivery)
+    toShow = props.joke.data.delivery
+    console.log("toShow:", toShow)
+
   }
   return (
     <div>
@@ -15,7 +19,7 @@ const Request = (props) =>
       <button onClick={handleClick}>Get answer</button>
       <br/>
       <br/>
-      <div>{props.joke.data.delivery}</div>
+      <div>{toShow}</div>
     </div>
   )
 }
