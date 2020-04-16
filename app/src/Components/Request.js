@@ -17,12 +17,21 @@ const Request = (props) =>
     <div>
       <br />
       <button onClick={handleClick}>Get answer</button>
+      <button onClick={props.showHideDelivery}>Show answer</button>
       <br/>
       <br/>
       <div>{toShow}</div>
     </div>
   )
 }
+
+const mapDispatchToProps = dispatch =>{
+  return {
+    //dispatching actions
+    showHideDelivery: () => dispatch({type: 'DISPLAY_DELIVERY' })
+  }
+}
+
 
 const mapStateToProps = state =>
 {

@@ -49,7 +49,7 @@ export const jokeReducer = (state = initialState, action) =>
       case 'DISPLAY_DELIVERY':
         return{
           ...state,
-          displayDelivery:true
+          displayDelivery:!state.displayDelivery // Not sure if this is right!
         }
     default:
       return state
