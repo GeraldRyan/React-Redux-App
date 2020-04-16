@@ -17,8 +17,8 @@ const Request = (props) =>
   return (
     <div>
       <br />
-      <button onClick={handleClick}>Get answer</button>
-      <button onClick={props.showHideDelivery}>Show answer</button>
+      <button onClick={props.showHideDelivery}>{!props.state.displayDelivery ? 'Show Answer': 'Hide Answer'}</button>
+      <button onClick={handleClick}>Get New Joke</button>
       <br />
       <br />
       <div>{props.state.displayDelivery && props.joke.data.delivery}</div>
@@ -30,11 +30,8 @@ const mapDispatchToProps = (dispatch) =>
 {
   return {
     //dispatching actions
-    showHideDelivery: () =>
-    {
-      dispatch({ type: 'DISPLAY_DELIVERY' })
-      console.log("Running ShowHideDelivery", dispatch)
-    }
+    showHideDelivery: () => dispatch({ type: 'DISPLAY_DELIVERY' })
+    
   }
 }
 
