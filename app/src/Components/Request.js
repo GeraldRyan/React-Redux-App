@@ -4,9 +4,10 @@ import { connect } from 'react-redux'
 const Request = (props) =>
 {
 
-  let toShow =''
+  let toShow = ''
 
-  const handleClick = e => {
+  const handleClick = e =>
+  {
     e.preventDefault()
     console.log("show answer", props.state.displayDelivery)
     toShow = props.joke.data.delivery
@@ -18,17 +19,22 @@ const Request = (props) =>
       <br />
       <button onClick={handleClick}>Get answer</button>
       <button onClick={props.showHideDelivery}>Show answer</button>
-      <br/>
-      <br/>
+      <br />
+      <br />
       <div>{toShow}</div>
     </div>
   )
 }
 
-const mapDispatchToProps = dispatch =>{
+const mapDispatchToProps = (dispatch) =>
+{
   return {
     //dispatching actions
-    showHideDelivery: () => dispatch({type: 'DISPLAY_DELIVERY' })
+    showHideDelivery: () =>
+    {
+      dispatch({ type: 'DISPLAY_DELIVERY' })
+      console.log("Running ShowHideDelivery", dispatch)
+    }
   }
 }
 
@@ -37,10 +43,10 @@ const mapStateToProps = state =>
 {
   console.log('state', state)
   return {
-    state:state,
+    state: state,
     joke: state.joke
   }
 }
 
 
-export default connect(mapStateToProps)(Request)
+export default connect(mapStateToProps, mapDispatchToProps)(Request)
