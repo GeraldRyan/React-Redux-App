@@ -21,7 +21,7 @@ const Request = (props) =>
       <button onClick={props.showHideDelivery}>Show answer</button>
       <br />
       <br />
-      <div>{toShow}</div>
+      <div>{props.state.displayDelivery && props.joke.data.delivery}</div>
     </div>
   )
 }

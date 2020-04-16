@@ -19,7 +19,7 @@ const Joke = (props) =>
       <Request></Request>
       <br/>
       
-      <div>{props.joke.data.delivery}</div>
+      {/* <div>{props.joke.data.delivery}</div> */}
 
     </div>
   )
