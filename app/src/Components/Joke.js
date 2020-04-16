@@ -18,6 +18,7 @@ const Joke = (props) =>
       <div>{props.joke.data.setup}</div>
       <Request></Request>
       <br/>
+      
       <div>{props.joke.data.delivery}</div>
 
     </div>

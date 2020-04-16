@@ -16,6 +16,7 @@ export const initialState = {
       error: false
     }
   },
+  showAnswer:false,
   isFetching: false,
   error: ''
 }
