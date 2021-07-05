@@ -35,7 +35,7 @@ Follow these steps for completing your project.
 - [ ] Do your magic!
 
 ## Minimum Viable Product
-
+r
 - [ ] Build a React Redux app
 - [ ] Fetch data inside an async action creator from an API of your choosing
 - [ ] Add the data from the API to the Redux store
